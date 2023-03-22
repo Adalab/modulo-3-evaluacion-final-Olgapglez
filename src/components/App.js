@@ -3,12 +3,16 @@ import headerImg from '../images/harry-potter-logo.png';
 import { useEffect, useState} from 'react';
 import getDataApi from './services/api';
 import CharacterList from './CharacterList';
+import Filters from './Filters/Filters';
 
 
 function App() {
 
-  const [listCharacter, setListCharacter]= useState([])
+  const [listCharacter, setListCharacter]= useState([]);
   
+  const [houseFilter, setHouseFilter] = useState('');
+
+
   useEffect(()=> {
     getDataApi().then((selectData => {
       console.log(selectData);
@@ -17,19 +21,30 @@ function App() {
   }, []);
   
   
-  
+  const handleFilterHouse = (value)=>{
+    console.log(value);
+    setHouseFilter(value);
+  };
+
+
+  const houseFiltered = listCharacter.filter((eachCharacter) => {
+
+      return houseFilter === "all" ? true : eachCharacter.house === houseFilter;
+  });
+
   return (
 
     <>
     <header className='header'>
       <img src={headerImg} className='header-img' alt='Harry Potter logo'></img>
     </header>
-    <CharacterList listCharacter={listCharacter}/>
+    <main className='main'>
+    <Filters handleFilterHouse={handleFilterHouse}/>
+    <CharacterList listCharacter={houseFiltered}/>
     
-
-    <main className='main'></main>
+    </main>
     </>
-  )
+  );
 }
 
 export default App;

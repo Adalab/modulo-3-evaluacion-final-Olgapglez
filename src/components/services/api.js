@@ -1,5 +1,5 @@
 const getDataApi  = () => {
-return fetch('https://hp-api.onrender.com/api/characters/house/gryffindor')
+return fetch('https://hp-api.onrender.com/api/characters')
     .then((response) => response.json())
     .then((data) => {
         const selectData = data.map((eachCharacter) => {
@@ -7,6 +7,7 @@ return fetch('https://hp-api.onrender.com/api/characters/house/gryffindor')
                 image: eachCharacter.image,
                 name: eachCharacter.name,
                 species: eachCharacter.species,
+                id: eachCharacter.id,
             };
         });
         return selectData;

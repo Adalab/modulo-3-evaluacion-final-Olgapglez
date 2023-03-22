@@ -2,15 +2,15 @@ import CharacterCard from "./CharacterCard";
 
 function CharacterList ({listCharacter}) {
 
-    const dataHTML = listCharacter.map((eachCharacter) => {
-        return <CharacterCard eachCharacter={eachCharacter}/>
+    const dataHtml = listCharacter.map((eachCharacter) => {
+        return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id}/>
     });
 
 return (
 
     <section className="list">
         <ul className="cards">
-        {dataHTML}
+        {dataHtml}
         </ul>
     </section>
 );
