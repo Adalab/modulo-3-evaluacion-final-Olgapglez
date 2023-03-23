@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.82eca188.css",
+    "main.js": "./static/js/main.5fe69e32.js",
+    "static/media/harry-potter-logo.png": "./static/media/harry-potter-logo.96e0a72cfdf19e36de8d.png",
+    "index.html": "./index.html",
+    "main.82eca188.css.map": "./static/css/main.82eca188.css.map",
+    "main.5fe69e32.js.map": "./static/js/main.5fe69e32.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82eca188.css",
+    "static/js/main.5fe69e32.js"
+  ]
+}
