@@ -1,8 +1,19 @@
-function FilterName () {
+function FilterName({ handleFilterName }) {
+
    
     return (
-
-<h2>Busca por por personaje:</h2>
+        <>
+            <label className="form-label" htmlFor="name">
+                Busca por por personaje:
+            </label>
+            <input
+                // className="form-input"
+                // onInput={handleChangeInput}
+                // type="text"
+                // name="name"
+                // id="name"
+            ></input>
+        </>
 
     )
 }

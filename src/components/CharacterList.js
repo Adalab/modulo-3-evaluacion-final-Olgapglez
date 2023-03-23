@@ -1,6 +1,6 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterList ({listCharacter}) {
+const CharacterList = ({listCharacter}) => {
 
     const dataHtml = listCharacter.map((eachCharacter) => {
         return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id}/>
@@ -15,6 +15,6 @@ return (
     </section>
 );
 
-}
+};
 
 export default CharacterList;

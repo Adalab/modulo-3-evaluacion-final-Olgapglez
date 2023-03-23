@@ -9,28 +9,36 @@ import Filters from './Filters/Filters';
 function App() {
 
   const [listCharacter, setListCharacter]= useState([]);
-  
-  const [houseFilter, setHouseFilter] = useState('');
+  const [houseFilter, setHouseFilter] = useState('Gryffindor');
+  // const [nameFilter, setNameFilter] = useState('');
 
 
   useEffect(()=> {
-    getDataApi().then((selectData => {
-      console.log(selectData);
-      setListCharacter(selectData);
+    getDataApi().then((data => {
+      console.log(data);
+      setListCharacter(data);
     }));
   }, []);
   
-  
-  const handleFilterHouse = (value)=>{
-    console.log(value);
+
+  const handleFilterHouse = (value) => {
     setHouseFilter(value);
   };
 
+  // const handleFilterName = (input) => {
+  //   setNameFilter(input);
+  // }
 
-  const houseFiltered = listCharacter.filter((eachCharacter) => {
+  const charactersFiltered = listCharacter
+      .filter((eachCharacter) => {
+        return houseFilter === "all" ? true : eachCharacter.house === houseFilter;
+      });
+      /* .filter((eachCharacter) => {
+         return eachCharacter.name.toLowerCase().includes(nameFilter.toLowerCase());
+       })
+      
+      }*/
 
-      return houseFilter === "all" ? true : eachCharacter.house === houseFilter;
-  });
 
   return (
 
@@ -39,8 +47,8 @@ function App() {
       <img src={headerImg} className='header-img' alt='Harry Potter logo'></img>
     </header>
     <main className='main'>
-    <Filters handleFilterHouse={handleFilterHouse}/>
-    <CharacterList listCharacter={houseFiltered}/>
+    <Filters handleFilterHouse={handleFilterHouse} /*handleFilterName={handleFilterName}*/ />
+    <CharacterList listCharacter={charactersFiltered}/>
     
     </main>
     </>

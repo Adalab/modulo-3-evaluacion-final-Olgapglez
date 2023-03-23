@@ -3,14 +3,14 @@ import FilterName from "./FilterName";
 
 
 
-function Filters({handleFilterHouse}) {
+function Filters({ handleFilterHouse, /*handleFilterName*/ }) {
 
     return (
         <section className="filters">
 
-            <form>
-            <FilterName/>
-            <FilterHouse handleFilterHouse={handleFilterHouse}/>
+            <form className="form">
+                <FilterName /*handleFilterName={handleFilterName}*/ />
+                <FilterHouse handleFilterHouse={handleFilterHouse} />
             </form>
 
         </section>
