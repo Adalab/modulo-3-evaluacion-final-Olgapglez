@@ -1,19 +1,19 @@
 import CharacterCard from "./CharacterCard";
 
-const CharacterList = ({listCharacter}) => {
+const CharacterList = ({ listCharacter }) => {
 
     const dataHtml = listCharacter.map((eachCharacter) => {
-        return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id}/>
+        return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />
     });
 
-return (
+    return (
 
-    <section className="list">
-        <ul className="cards">
-        {dataHtml}
-        </ul>
-    </section>
-);
+        <section className="list">
+            <ul className="cards">
+                {dataHtml}
+            </ul>
+        </section>
+    );
 
 };
 
